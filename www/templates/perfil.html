@@ -1,0 +1,62 @@
+<ion-view view-title="Atualização Cadastral">
+  <ion-content class="padding">
+    <div class="msg-sucesso" ng-show="mensagemSucesso">
+      Alterações salvas com sucesso!
+    </div>
+
+    <div class="list">
+      <div class="item item-divider">Dados Institucionais (Somente Leitura)</div>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Nome Completo</span>
+        <input type="text" ng-model="aluno.nome" ng-disabled="true">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Matrícula</span>
+        <input type="text" ng-model="aluno.matricula" ng-disabled="true">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Curso</span>
+        <input type="text" ng-model="aluno.curso" ng-disabled="true">
+      </label>
+
+      <div class="item item-divider">Dados de Contato e Endereço</div>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">E-mail Pessoal</span>
+        <input type="email" ng-model="aluno.email">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Telefone / WhatsApp</span>
+        <input type="text" ng-model="aluno.telefone">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">CEP</span>
+        <input type="text" ng-model="aluno.cep">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Rua</span>
+        <input type="text" ng-model="aluno.rua">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Bairro</span>
+        <input type="text" ng-model="aluno.bairro">
+      </label>
+
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Cidade</span>
+        <input type="text" ng-model="aluno.cidade">
+      </label>
+    </div>
+
+    <button class="button button-block button-ucsal" ng-click="salvarCadastro()">
+      Salvar Alterações
+    </button>
+  </ion-content>
+</ion-view>

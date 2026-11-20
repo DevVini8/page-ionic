@@ -1,0 +1,20 @@
+<ion-view view-title="Detalhes">
+  <ion-content class="padding">
+    <div class="list card" ng-if="noticiaAtual">
+      <div class="item">
+        <span class="tag-categoria">{{ noticiaAtual.categoria }}</span>
+        <span class="item-note">{{ noticiaAtual.data }}</span>
+        <h2 style="margin-top: 8px; white-space: normal;">{{ noticiaAtual.titulo }}</h2>
+        <p>{{ noticiaAtual.campus }}</p>
+      </div>
+
+      <div class="item item-image">
+        <img class="noticia-img" ng-src="{{ noticiaAtual.imagem }}" alt="{{ noticiaAtual.titulo }}">
+      </div>
+
+      <div class="item item-body">
+        <p>{{ noticiaAtual.conteudo }}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

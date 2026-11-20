@@ -1,0 +1,8 @@
+{
+  "name": "ucsal-app",
+  "version": "1.0.0",
+  "description": "Portal do Aluno UCSal - Ionic Framework + AngularJS",
+  "scripts": {
+    "start": "npx serve www"
+  }
+}

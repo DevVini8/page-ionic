@@ -1,0 +1,35 @@
+<ion-view view-title="Mural UCSal">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Filtrar Categoria</div>
+        <select ng-model="filtro.categoria">
+          <option value="">Todas</option>
+          
+          <option value="Notícia">Notícias</option>
+          <option value="Evento">Eventos</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="list card" ng-repeat="item in publicacoes | filter:{categoria: filtro.categoria}">
+      <div class="item">
+        <span class="tag-categoria">{{ item.categoria }}</span>
+        <span class="item-note">{{ item.data }}</span>
+        <h2 style="margin-top: 8px; white-space: normal;">{{ item.titulo }}</h2>
+        <p>{{ item.campus }}</p>
+      </div>
+
+      <div class="item item-image">
+        <img class="noticia-img" ng-src="{{ item.imagem }}" alt="{{ item.titulo }}">
+      </div>
+
+      <div class="item item-body">
+        <p>{{ item.resumo }}</p>
+        <button class="button button-small button-ucsal-light" ng-click="abrirDetalhe(item.id)">
+          Ler mais
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

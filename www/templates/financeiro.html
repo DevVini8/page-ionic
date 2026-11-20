@@ -1,0 +1,30 @@
+<ion-view view-title="Consulta Financeira">
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Semestre Letivo</div>
+        <select ng-model="filtro.semestre" ng-options="sem for sem in semestres"></select>
+      </label>
+    </div>
+
+    <div class="list card" ng-repeat="parcela in mensalidades | filter:{semestre: filtro.semestre}">
+      <div class="item">
+        <h2>{{ parcela.mes }}</h2>
+        <p>Vencimento: {{ parcela.vencimento }}</p>
+        <p>Valor: <strong>{{ parcela.valor | currency:'R$ ' }}</strong></p>
+        <span ng-class="{'badge-paga': parcela.status === 'Paga', 'badge-apagar': parcela.status === 'A Pagar'}">
+          {{ parcela.status }}
+        </span>
+      </div>
+
+      <div class="item item-body" ng-if="parcela.status === 'A Pagar'">
+        <button class="button button-block button-small button-ucsal-light" ng-click="copiarCodigo(parcela)">
+          Copiar Código de Barras
+        </button>
+        <div class="msg-sucesso" ng-show="codigoCopiadoId === parcela.id" style="margin-top: 8px; margin-bottom: 0;">
+          Código copiado para a área de transferência!
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
